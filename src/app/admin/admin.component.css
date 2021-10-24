@@ -1,0 +1,17 @@
+.table-responsive{
+    position: absolute;
+   
+    background-color: white;
+    border:2pxs solid black;
+    border-radius: 50%;
+    padding:4px 10px;
+    font-weight: 50;
+    font-size: 20px;
+    top:20%;
+    
+}
+.table .table-bordered .bg-info{
+    padding:4px 10px;
+    font-weight: 50;
+    font-size: 40px;
+}

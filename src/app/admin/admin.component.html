@@ -1,0 +1,34 @@
+<app-header></app-header>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<br>
+<br>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<div class='table-responsive'>
+
+    
+    <table class='table table-bordered'>
+        <thead>
+            <tr class="bg-info">
+                <th>FoodItems</th>
+                <th>Name</th>
+                <th>Cost</th>
+                <th>Edit</th>
+                <th>Delete</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor='let mov of Food'>
+                        <img [src]='mov.Img' [width]='imgWidth' [height]='imgHeight'
+                            [style.borderRadius.px]='imgRadius'>
+                <td>{{mov.Name}}</td>
+                <td>{{mov.Cost}}</td>
+               
+                
+                <td><button (click)="onDelete(mov.Name)">Delete</button></td>
+            </tr>
+        </tbody>
+    </table>
+    <button type="button" class="btn btn-primary" [routerLink]="['/add']">Admin page</button>
+</div>

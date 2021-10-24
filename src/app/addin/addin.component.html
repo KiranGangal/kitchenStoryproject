@@ -1,0 +1,138 @@
+<div class="card-body lg-4 md-6 sm-12 xs-12" align="center">
+    <form novalidate (ngSubmit)="onCereAdd(regForm)" #regForm="ngForm">
+        <!-- fruitid -->
+        <div class="form-group row mb-2">
+            <label class="col-md-2 col-form-label" for="fruitId">ID</label>
+            <div class="col-md-8">
+                <input type="text" required 
+                id="fruitId" 
+                minlength="1" 
+                name="fruitID" 
+                [(ngModel)]=kitchen.Item 
+                #fruitID="ngModel"
+                [ngClass]="{'is-invalid':(fruitID.touched||fruitID.dirty)&&!fruitID.valid}"/>
+
+                <span class="invalid-feedback">
+                    <span *ngIf=fruitID.errors?.required>
+                        The fruit ID is required
+                    </span>
+
+                    <span *ngIf=fruitID.errors?.minlength>
+                        The fruit ID should characters long
+                    </span>
+                </span>
+            </div>            
+        </div>
+        <div class="form-group row mb-2">
+            <label class="col-md-2 col-form-label" for="fruitName">Name</label>
+            <div class="col-md-8">
+                <input type="text" required 
+                id="fruitName" 
+                minlength="1" 
+                name="fruitName" 
+                [(ngModel)]=kitchen.Name
+                #fruitName="ngModel"
+                [ngClass]="{'is-invalid':(fruitName.touched||fruitName.dirty)&&!fruitName.valid}"/>
+
+                <span class="invalid-feedback">
+                    <span *ngIf=fruitName.errors?.required>
+                        The Name is required
+                    </span>
+
+                    <span *ngIf=fruitName.errors?.minlength>
+                        The Name should characters long
+                    </span>
+                </span>
+            </div>            
+        </div>
+        <div class="form-group row mb-2">
+            <label class="col-md-2 col-form-label" for="fruitCost">Cost</label>
+            <div class="col-md-8">
+                <input type="text" required 
+                id="fruitCost" 
+                minlength="1" 
+                name="fruitCost" 
+                [(ngModel)]=kitchen.Cost
+                #fruitCost="ngModel"
+                [ngClass]="{'is-invalid':(fruitCost.touched||fruitCost.dirty)&&!fruitCost.valid}"/>
+
+                <span class="invalid-feedback">
+                    <span *ngIf=fruitCost.errors?.required>
+                        The cost is required
+                    </span>
+
+                    <span *ngIf=fruitCost.errors?.minlength>
+                        The cost should characters long
+                    </span>
+                </span>
+            </div>            
+        </div>
+        <div class="form-group row mb-2">
+            <label class="col-md-2 col-form-label" for="fruitRating">Rating</label>
+            <div class="col-md-8">
+                <input type="text" required 
+                id="fruitRating" 
+                minlength="1" 
+                name="fruitRating" 
+                [(ngModel)]=kitchen.Rating
+                #fruitRating="ngModel"
+                [ngClass]="{'is-invalid':(fruitRating.touched||fruitRating.dirty)&&!fruitRating.valid}"/>
+
+                <span class="invalid-feedback">
+                    <span *ngIf=fruitRating.errors?.required>
+                        The Rating is required
+                    </span>
+
+                    <span *ngIf=fruitRating.errors?.minlength>
+                        The Rating should characters long
+                    </span>
+                </span>
+            </div>            
+        </div>
+        <div class="form-group row mb-2">
+            <label class="col-md-2 col-form-label" for="fruitqnt">quantity</label>
+            <div class="col-md-8">
+                <input type="text" required 
+                id="fruitqnt" 
+                minlength="1" 
+                name="fruitqnt" 
+                [(ngModel)]=kitchen.qnt
+                #fruitqnt="ngModel"
+                [ngClass]="{'is-invalid':(fruitqnt.touched||fruitqnt.dirty)&&!fruitqnt.valid}"/>
+
+                <span class="invalid-feedback">
+                    <span *ngIf=fruitqnt.errors?.required>
+                        The quantity is required
+                    </span>
+
+                    <span *ngIf=fruitqnt.errors?.minlength>
+                        The quantity should characters long
+                    </span>
+                </span>
+            </div>            
+        </div>
+        <div class="form-group row mb-2">
+            <label class="col-md-2 col-form-label" for="fruitImg">Image</label>
+            <div class="col-md-8">
+                <input type="text" required 
+                id="fruitImg" 
+                minlength="1" 
+                name="fruitImg" 
+                [(ngModel)]=kitchen.Img
+                #fruitImg="ngModel"
+                [ngClass]="{'is-invalid':(fruitImg.touched||fruitImg.dirty)&&!fruitImg.valid}"/>
+
+                <span class="invalid-feedback">
+                    <span *ngIf=fruitImg.errors?.required>
+                        The Rating is required
+                    </span>
+
+                    <span *ngIf=fruitImg.errors?.minlength>
+                        The Rating should characters long
+                    </span>
+                </span>
+            </div>            
+        </div>
+        <button class="btn btn-success" type="submit" [disabled]="!regForm.valid">submit</button>
+    </form>
+</div>

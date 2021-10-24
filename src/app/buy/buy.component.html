@@ -1,0 +1,51 @@
+<app-nheader></app-nheader>
+<section class="cart_section">
+    <div class="container">
+    <h2>Cart</h2>
+    <div *ngIf="getCartDetails">
+    <div class="table-responsive">
+        <table>
+            <tr>
+                <th>Name</th>
+                <th>Price</th>
+                <th>Qunatity</th>
+                <th>Sub Total</th>
+                <th>Remove Item</th>
+              </tr>
+              <tr *ngFor="let c of getCartDetails">
+                <td>{{c.Name}}</td>
+                <td>{{c.Cost| currency:"INR"}}</td>
+                <td>
+                  <div class="content">
+                    <button type="button" class="btn1" (click)="decq(c.Item,c.qnt)"><i class="fa fa-minus"></i></button>
+                     <span>{{c.qnt}}</span>
+                    
+                    <button type="button" class="btn1" (click)="incq(c.Item,c.qnt)"><i class="fa fa-plus"></i></button>
+                  </div></td>
+                <td>{{c.Cost*c.qnt|currency:"INR"}}</td>
+                <td><button type="button" class="btn btn-danger" (click)="singledel(c.Item)"><i class="fa fa-trash"></i></button></td>
+              </tr>
+             
+        </table>
+    <div class="container">
+        <h2>Total:{{total|currency:"INR"}}</h2>
+    <div class="col-md-14 text-right">
+      <button type="button" class="btn btn-primary" [routerLink]="['/pay']" (click)="removeall()">CheckOut</button>&nbsp;
+    <button type="button" class="btn btn-danger" (click)="removeall()">Removeall</button>
+
+    </div>
+  
+    
+  
+  
+  </div>
+</div>
+    </div>
+</div>
+</section>
+<br>
+<br>
+<br>
+<br>
+<br>
+<app-footer></app-footer>
